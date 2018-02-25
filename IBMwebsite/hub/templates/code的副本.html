@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+   <!--head>
+      <title>Bootstrap 模板</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+	  
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+      
+   </head-->
+   <head>
+   <meta charset="utf-8">
+   <title>bootstrap测试</title>
+   <link href="{% url 'hub:index' %}/../../static/bootstrap.min.css" rel="stylesheet" />
+</head>
+   <body>
+   
+
+	  
+      <nav class="navbar navbar-default navbar-fixed-top" style="background-color:white">
+  <div class="container-fluid" style="line-height:35px;">
+
+    <h3 class="navbar-text" style="float:left" >CodeHub</h3>
+
+  <!--button type="button" class="btn btn-default">username</button-->
+  
+
+	<p class="navbar-text" style="font-family:arial;color:black;float:right">{{request.session.user_name}}  <a href="#" class="navbar-link">退出</a></p>
+  </div>
+</nav>
+ <br>
+ <br>
+ <br>
+ <div class="panel panel-default" style="background-color:GhostWhite">
+  <div class="panel-body">
+		<div class="panel panel-info">
+  <div class="panel-heading" style="background-color:white">
+
+	<br>
+	<p style="font-family:arial;color:black;font-size:20px;"> <a href="#">{{request.session.now_project_owner}}</a> / <a href="#">{{request.session.now_project_name}}</a></p>
+<hr>项目描述
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="code.html">代码</a></li>
+  <li role="presentation"><a href="commit.html">提交记录</a></li>
+  <li role="presentation"><a href="branch.html">分支</a></li>
+  <li role="presentation"><a href="member.html">项目成员</a></li>
+</ul>
+<br>
+
+
+
+<div class="dropdown" style="float:left">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Master
+					<span class="caret"></span>
+		</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a href="#">dev-1</a></li>
+				<li><a href="#">dev-2</a></li>
+				<li><a href="#">dev-3</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			</ul>
+</div>
+<div class="btn-group" role="group" aria-label="..." style="float:right">
+  <button type="button" class="btn btn-default"><a href="code_new.html">新建</a></button>
+  <button type="button" class="btn btn-default"><a href="upload.html">上传</a></button>
+ <!--  <form action="/polls/upload/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="fafafa" />
+    <input type="submit" value="上传" />
+</form> -->
+  <button type="button" class="btn btn-default"><a href="download.html">下载</a></button>
+</div>
+<br>
+<br>
+<br>
+<h4>{{ project.project_name }}</h4>
+<br>
+<h4>{{files}}5456</h4>
+<br>
+<table class="table">
+  {% for file in files %}
+          <tr>
+          <td>{{file}}</td>
+          <td style="text-align:right">时间（待完成）</td>
+          <td >修改者（待完成）</td>
+          <td >注释（待完成）</td>
+          </tr>
+  {% endfor %}
+</table>
+
+  </div>
+  
+  
+
+</div>
+ 
+ </div>
+</div>
+ 
+ 
+ <script src="{% url 'hub:index' %}/../../static/jquery.min.js"></script>
+   <script src="{% url 'hub:index' %}/../../static/bootstrap.min.js"></script>
+
+   </body>
+</html>

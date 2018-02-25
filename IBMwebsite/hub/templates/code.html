@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+   <!--head>
+      <title>Bootstrap 模板</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+	  
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+      
+   </head-->
+   <head>
+   <meta charset="utf-8">
+   <title>hub</title>
+   <link href="/static/Img/ele.jpg" rel="shortcut icon">
+   <link href="/static/bootstrap.min.css" rel="stylesheet" />
+</head>
+   <body>
+
+    {% include "_codeHead.html" %}
+	 
+ <div class="panel panel-default" style="background-color:GhostWhite">
+  <div class="panel-body">
+		<div class="panel panel-info">
+  <div class="panel-heading" style="background-color:white">
+
+	<br>
+  <p style="font-family:arial;color:black;font-size:20px;"> <a href="{% url 'hub:profile' %}">{{request.session.now_project_owner}}</a> / <a href="{% url 'hub:code' %}">{{request.session.now_project_name}}</a></p>
+<hr>项目描述
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="{% url 'hub:code' %}">代码</a></li>
+      <li role="presentation"><a href="{% url 'hub:commit' %}">提交记录</a></li>
+      <li role="presentation"><a href="{% url 'hub:branch' %}">分支</a></li>
+      <li role="presentation"><a href="{% url 'hub:member' %}">项目成员</a></li>
+      {%if request.session.is_leader %}
+          <li role="presentation"><a href="{% url 'hub:settings' %}">设置</a></li>
+      {% endif %}
+    </ul>
+<br>
+
+
+
+<div class="btn-group" style="float:left">
+                        <button type="button" id="switch" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{request.session.head_branch}}&nbsp;&nbsp;<span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% for branch in data %}
+                            <li><a href="#">{{ branch }}</a></li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+<div class="btn-group" role="group" aria-label="..." style="float:right">
+  <button type="button" class="btn btn-default"><a href="code_new.html">新建</a></button>
+  <button type="button" class="btn btn-default"><a href="upload.html">上传</a></button>
+ <!--  <form action="/polls/upload/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="fafafa" />
+    <input type="submit" value="上传" />
+</form> -->
+  <!-- <button type="button" id="cloneOrDownload" class="btn btn-default"><a href="download.html">Clone或下载</a></button> -->
+  <div class="dropdown" style="float:left">
+      <button type="button" class="btn btn-default dropdown-toggle btn-info"  id="cloneOrDownload" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            下载
+          <span class="caret"></span>
+    </button>
+      <ul class="dropdown-menu" aria-labelledby="cloneOrDownload">
+        <li><a id="downloadZip" href="#">下载zip</a></li>
+       <!--  <li><a href="#">dev-2</a></li>
+        <li><a href="#">dev-3</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Separated link</a></li> -->
+      </ul>
+</div>
+</div>
+<br>
+<br>
+<br>
+<table class="table">
+  {% for file in files %}
+          <tr>
+          <td><a href="code_file?file_name={{file}}">{{file}}</a></td>
+         <!--  <td style="text-align:right">时间（待完成）</td>
+          <td >修改者（待完成）</td>
+          <td >注释（待完成）</td> -->
+          </tr>
+  {% endfor %}
+</table>
+
+  </div>
+  
+  
+
+</div>
+ 
+ </div>
+</div>
+ 
+ 
+   <script src="/static/jquery.min.js"></script>
+   <script src="/static/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $("#cloneOrDownload").click(function(){
+        console.log("111111111")
+        //console.log(ret)
+        $.get("{% url 'hub:getZip' %}",{}, function(ret){
+            console.log(ret)
+            $('#downloadZip').attr("href","/static/"+ret)
+        })
+
+      });
+    });
+</script>
+
+   
+
+   <script>
+     /*
+     * Project: Twitter Bootstrap Hover Dropdown
+     * Author: Cameron Spear
+     * Contributors: Mattia Larentis
+     *
+     * Dependencies?: Twitter Bootstrap's Dropdown plugin
+     *
+     * A simple plugin to enable twitter bootstrap dropdowns to active on hover and provide a nice user experience.
+     *
+     * No license, do what you want. I'd love credit or a shoutout, though.
+     *
+     * http://cameronspear.com/blog/twitter-bootstrap-dropdown-on-hover-plugin/
+     */
+    ;(function($, window, undefined) {
+        // outside the scope of the jQuery plugin to
+        // keep track of all dropdowns
+        var $allDropdowns = $();
+
+        // if instantlyCloseOthers is true, then it will instantly
+        // shut other nav items when a new one is hovered over
+        $.fn.dropdownHover = function(options) {
+
+            // the element we really care about
+            // is the dropdown-toggle's parent
+            $allDropdowns = $allDropdowns.add(this.parent());
+
+            return this.each(function() {
+                var $this = $(this).parent(),
+                    defaults = {
+                        delay: 500,
+                        instantlyCloseOthers: true
+                    },
+                    data = {
+                        delay: $(this).data('delay'),
+                        instantlyCloseOthers: $(this).data('close-others')
+                    },
+                    options = $.extend(true, {}, defaults, options, data),
+                    timeout;
+
+                $this.hover(function() {
+                    if(options.instantlyCloseOthers === true)
+                        $allDropdowns.removeClass('open');
+
+                    window.clearTimeout(timeout);
+                    $(this).addClass('open');
+                }, function() {
+                    timeout = window.setTimeout(function() {
+                        $this.removeClass('open');
+                    }, options.delay);
+                });
+            });
+        };
+        $('[data-hover="dropdown"]').dropdownHover();
+    })(jQuery, this);
+   </script>
+
+   </body>
+</html>

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+   <!--head>
+      <title>Bootstrap 模板</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   </head-->
+   <head>
+       <meta charset="utf-8">
+       <title>hub</title>
+       <link href="/static/Img/ele.jpg" rel="shortcut icon">
+       <!-- <link rel="ele icon" href="/static/Img/favicon.ico" type="image/x-icon"> -->
+       <link href="/static/bootstrap.min.css" rel="stylesheet" />
+   </head>
+   <body>
+    {% include "_codeHead.html" %}
+   <!-- <nav class="navbar navbar-default navbar-fixed-top" style="background-color:white">
+       <div class="container-fluid" style="line-height:35px;">
+           <h3 class="navbar-text" style="float:left" >hub</h3>
+        <p class="navbar-text" style="font-family:arial;color:black;float:right">{{request.session.user_name}}  <a href="login" class="navbar-link">退出</a></p>
+      </div>
+   </nav>
+   <br>
+   <br>
+   <br> -->
+   <div class="panel panel-default" style="background-color:GhostWhite">
+       <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading" style="background-color:white">
+                    <br>
+  <p style="font-family:arial;color:black;font-size:20px;"> <a href="{% url 'hub:profile' %}">{{request.session.now_project_owner}}</a> / <a href="{% url 'hub:code' %}">{{request.session.now_project_name}}</a></p>
+                    <hr>项目描述
+                </div>
+                <div class="panel-body">
+                      <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="{% url 'hub:code' %}">代码</a></li>
+                        <li role="presentation"><a href="{% url 'hub:commit' %}">提交记录</a></li>
+                        <li role="presentation" class="active"><a href="{% url 'hub:branch' %}">分支</a></li>
+                        <li role="presentation"><a href="{% url 'hub:member' %}">项目成员</a></li>
+                        {%if request.session.is_leader %}
+                            <li role="presentation"><a href="{% url 'hub:settings' %}">设置</a></li>
+                        {% endif %}
+                      </ul>
+                    <br>
+<!--<p>{{data}}</p> -->
+                    <div class="btn-group" style="float:left">
+                        <button type="button" id="switch" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{request.session.head_branch}}&nbsp;&nbsp;<span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% for branch in data %}
+                            <li><a href="#">{{ branch }}</a></li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+
+                    <form class="form-inline" style="float:right">
+                    {% csrf_token%}
+                        <div class="btn-group" style="float:left">
+                        <button type="button" id="frombranch" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                            待合并分支&nbsp;&nbsp;<span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% for branch in data %}
+                            <li><a href="#">{{ branch }}</a></li>
+                            {%endfor%}
+                        </ul>
+                        </div>
+                        <p style="font-family:arial;color:black;font-size:20px;float:left">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        <div class="form-group">
+                            <input type="text" size="35" id="mergemsg" name="new_branch" class="form-control" placeholder="***请输入提交信息***" >
+                        </div>
+                        <button type="button" class="btn btn-default" id="merge_branch" style="float" >合并分支</button>
+                    </form>
+
+
+
+                    <p style="font-family:arial;color:black;font-size:20px;float:left">&nbsp;&nbsp;&nbsp;</p>
+                    <br>
+                    <br>
+                    <br>
+                    <table class="table">
+                        {% for branch in data %}
+                        <tr>
+                            <td >{{ branch }}</td>
+                            <td ><a href="{% url "hub:branch" %}?branch_name={{ branch }}"><button type="submit" class="btn btn-default" method='get' style="float:right" >删除</button></a></td>
+                            <!-- <td ><button type="button" class="btn btn-default deleteBtn" style="float:right" >删除</button></td> -->
+                        </tr>
+                        {%endfor%}
+                        <br>
+                    </table>
+                    <form class="form-inline" action="{% url "hub:branch" %}" method="post" style="float:right">
+                        {% csrf_token%}
+                        <div class="form-group">
+                            <input type="text"  name="new_branch" class="form-control" placeholder="输入新分支名...">
+                        </div>
+                        <button type="submit" class="btn btn-default">新建分支</button>
+                    </form>
+                </div>
+            </div>
+       </div>
+   </div>
+   <script src="/static/jquery.min.js"></script>
+   <script src="/static/bootstrap.min.js"></script>
+   <script>
+          function getSceneId() {
+          console.log("dddddddddd")
+             $.ajax({
+                 url: "{% url "hub:branch" %}",
+                 type: "POST",
+                 data: post_data,
+             });
+         }
+   </script>
+   <script>
+     $('.dropdown-toggle').dropdown()
+      $('.dropdown-menu a').on('click', function(){
+       $(this).parent().parent().prev().html($(this).html() + '&nbsp;&nbsp;<span class="caret"></span>');
+       if($(this).parent().parent().prev().attr("id")==="switch"){
+            var to = ($("#switch").html()).split("&nbsp;&nbsp;");
+            to_branch = to[0];
+            $.post("{% url 'hub:branch' %}",{'tobranch':to_branch});
+       }
+      })
+   </script>
+    <script>
+      $(document).ready(function(){
+      $(".deleteBtn").click(function(){
+                //alert('sdfsdfsd')
+      console.log('sdfsdfsssssssssssssssss')
+       console.log($(this).parent().prev().html())
+        // var from = ($("#frombranch").html()).split("&nbsp;&nbsp;")
+        // from_branch = from[0]
+        // merge_msg = $("#mergemsg").val()
+        console.log( $.post("{% url 'hub:branch' %}",{'branch_name':$(this).parent().prev().html()})  ) 
+      })
+      })
+   </script>
+   <script>
+      $(document).ready(function(){
+      // 合并分支
+      $("#merge_branch").click(function(){
+        var from = ($("#frombranch").html()).split("&nbsp;&nbsp;")
+        from_branch = from[0]
+        merge_msg = $("#mergemsg").val()
+        $.post("{% url 'hub:branch' %}",{'frombranch':from_branch,'message':merge_msg})
+      })
+      })
+   </script>
+   <script>
+       $(document).ready(function(){
+      // 切换分支
+
+      })
+   </script>
+   <script>
+     /*
+     * Project: Twitter Bootstrap Hover Dropdown
+     * Author: Cameron Spear
+     * Contributors: Mattia Larentis
+     *
+     * Dependencies?: Twitter Bootstrap's Dropdown plugin
+     *
+     * A simple plugin to enable twitter bootstrap dropdowns to active on hover and provide a nice user experience.
+     *
+     * No license, do what you want. I'd love credit or a shoutout, though.
+     *
+     * http://cameronspear.com/blog/twitter-bootstrap-dropdown-on-hover-plugin/
+     */
+    ;(function($, window, undefined) {
+        // outside the scope of the jQuery plugin to
+        // keep track of all dropdowns
+        var $allDropdowns = $();
+
+        // if instantlyCloseOthers is true, then it will instantly
+        // shut other nav items when a new one is hovered over
+        $.fn.dropdownHover = function(options) {
+
+            // the element we really care about
+            // is the dropdown-toggle's parent
+            $allDropdowns = $allDropdowns.add(this.parent());
+
+            return this.each(function() {
+                var $this = $(this).parent(),
+                    defaults = {
+                        delay: 500,
+                        instantlyCloseOthers: true
+                    },
+                    data = {
+                        delay: $(this).data('delay'),
+                        instantlyCloseOthers: $(this).data('close-others')
+                    },
+                    options = $.extend(true, {}, defaults, options, data),
+                    timeout;
+
+                $this.hover(function() {
+                    if(options.instantlyCloseOthers === true)
+                        $allDropdowns.removeClass('open');
+
+                    window.clearTimeout(timeout);
+                    $(this).addClass('open');
+                }, function() {
+                    timeout = window.setTimeout(function() {
+                        $this.removeClass('open');
+                    }, options.delay);
+                });
+            });
+        };
+        $('[data-hover="dropdown"]').dropdownHover();
+    })(jQuery, this);
+   </script>
+   </body>
+</html>

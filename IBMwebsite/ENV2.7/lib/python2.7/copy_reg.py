@@ -1,0 +1,5 @@
+XSym
+0030
+380f1a6e72d25452c444e80d5858bba0
+/usr/lib/python2.7/copy_reg.py
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

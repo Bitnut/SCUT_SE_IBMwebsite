@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title_text %}内部资料{% endblock %}
+
+{% block stylesheet %}/static/lib.css{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form class="form-signin" role="form" action="">
+        <h2 class="form-signin-heading" align="center">请使用内部账号登陆</h2>
+        <input type="email" class="form-control" placeholder="账号" required autofocus>
+        <input type="password" class="form-control" placeholder="密码" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">登陆</button>
+    </form>
+</div> <!-- /container -->
+{% endblock %}

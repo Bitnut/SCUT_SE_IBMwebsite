@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title_text %}结果{% endblock %}
+
+{% block stylesheet %}/static/result.css{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="icon-field">
+            <img src="/static/images/{{ result_picture_name }}" id="resulticon">
+            <h1>{{ result_title }}</h1>
+            <br>
+            <p>{{ result_text_p1 }}</p>
+            <p>{{ result_text_p2 }}</p>
+        </div>
+    </div>
+{% endblock %}

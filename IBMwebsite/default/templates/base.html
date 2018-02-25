@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title_text %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="{% block stylesheet %}{% endblock %}">
+    <link rel="stylesheet" href="/static/mynav.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- navbar-inverse为样式 navbar-fixed-top为位置 -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo">
+                    <a href="/" class="navbar-brand">
+                        <img src="/static/images/ibmlogo.png" alt="Brand" id="logoimg">
+                    </a>
+                </div>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/lib/">内部资料</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/about/">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="/join/">加入我们</a>
+                    </li>
+                    <li>
+                        <a href="/codeHub/mainPage.html">codeHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+    <script src="/static/lib/jquery-2.2.4.min.js"></script>
+    <script src="/static/lib/bootstrap.min.js"></script>
+</body>
+</html>

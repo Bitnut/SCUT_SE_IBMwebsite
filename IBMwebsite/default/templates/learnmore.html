@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title_text %}了解更多{% endblock %}
+
+{% block stylesheet %}/static/learnmore.css{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <div class="col-xs-12 col-sm-9">
+                <p class="pull-right visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">菜单 &raquo;</button>
+                </p>
+                <div class="jumbotron">
+                    <h2 id="content_title">为什么要加入我们</h2>
+                    <p id="content" style="line-height: 200%">
+                        初入大学, 很多同学都会经历一个困惑、迷茫的时期——对自己的专业的困惑，对自己未来方向的迷茫，大学的时间何其宝贵，我们需要做的那么多，时间又那么宝贵，我们是多么需要一个提高我们专业技能的同时还能锻炼个人通用技能的地方，可放眼我华工各种社团俱乐部，竟然真的很难找到一个这样的组织。<br>
+                        然而今时不同往日，我们软件学院的IBM主机创新俱乐部成立了。在这里，我们有许多擅长各个IT领域的师兄和老师来指导我们的技术，也可以通过参加俱乐部组织的各种讲座、培训来提高自己的专业技术水平，更可以通过参与组织讲座、参与俱乐部日常运营管理，来锻炼自己的通用技能，所谓一举两得，不正是如此吗？<br>
+                        除此之外，我们还会组织会员到IBM公司或其他高校、IT企业进行参观学习，提高会员对IT企业文化的认识；我们在俱乐部内部也会组织项目开发，或是承接、协助IBM主机教育中心、软件学院和学校的一些技术型项目，以及参加IBM公司组织开展的各种比赛、夏令营，让大家在校园里就能接触到企业文化和项目开发，为将来的学习和工作打下坚实基础，赢在起跑线上。<br>
+                        如果你怀瑾握瑜，身为技术大神却苦于没有项目而无处一展长才，那就加入我们吧；如果你毛羽未丰，一心想提高自己的各方面能力却因为没有机会，那么也请加入我们吧——只需点击主页左上方的“加入我们”，就可以报名啦——软院IBM主机创新俱乐部，定不负所望！<br>
+                    </p>lear
+                </div>
+            </div><!--/.col-xs-12.col-sm-9-->
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                <div class="list-group">
+                    <a href="javascript:void(0);" class="list-group-item active" id="btn1" onclick="btn1()">为什么要加入我们</a>
+                    <a href="javascript:void(0);" class="list-group-item" id="btn2" onclick="btn2()">报名方式</a>
+                    <a href="javascript:void(0);" class="list-group-item" id="btn3" onclick="btn3()">特别提醒</a>
+                </div>
+            </div><!--/.sidebar-offcanvas-->
+
+        </div>
+    </div>
+    <script src="/static/learnmore.js"></script>
+{% endblock %}

@@ -1,0 +1,15 @@
+.content{
+    /*background-image: url("images/bg5.jpg");*/
+    /*background-size: cover;*/
+}
+
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+}
+
+#agree_to_allocation{
+    height: 25px;
+    width: 25px;
+}

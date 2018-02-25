@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="upload.html/" method="POST" enctype="multipart/form-data" value="{% csrf_token %}">
+
+    <input type="file" name="fafafa" />
+    <input type="submit" value="上传" />
+    <a href="{% url 'hub:code' %}">返回</a>
+</form>
+</body>
+</html>

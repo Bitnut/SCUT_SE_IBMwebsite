@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title_text %}加入我们{% endblock %}
+
+{% block stylesheet %}/static/join.css{% endblock %}
+
+{% block body %}
+<div class="content">
+        <div class="container">
+            <!--<div class="page-header" align="center">-->
+                <!--<h1 class="title">-->
+                    <!--IBM主机创新俱乐部报名表(仅限软院)-->
+                <!--</h1>-->
+            <!--</div>-->
+            <br>
+
+            <div class="alert alert-info" role="alert">
+                <strong>注意: </strong>
+                俱乐部仅对软件学院新生报名
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                报名时间:9月4日到9月10日
+            </div>
+
+            <div class="well">
+                <form role="form" class="form-horizontal" method="post" action="/submit/">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名:</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="name_input" name="name" placeholder="Name" required>
+                            </div>
+                            <label class="col-sm-1 control-label">性别:</label>
+                            <div class="col-sm-1">
+                                <select class="form-control" id="sex_input" name="sex" required>
+                                    <option>男</option>
+                                    <option>女</option>
+                                    <option>秀吉</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-1 control-label">民族:</label>
+                            <div class="col-sm-1">
+                                <input type="text" class="form-control" id="nation_input" name="nation" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">宿舍地址:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="address_input" name="address" placeholder="" required>
+                            </div>
+                            <label class="col-sm-1 control-label">Email:</label>
+                            <div class="col-sm-4">
+                                <input type="email" class="form-control" id="email_input" name="email" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">QQ号码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="QQ_input" name="QQ" placeholder="" required>
+                            </div>
+                            <label class="col-sm-1 control-label">手机号码:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="phone_input" name="phone" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">爱好:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="hobby_input" name="hobby" placeholder="多个请用空格分隔" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">已加入的学生组织:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="organization_input" name="organization" placeholder="多个请用空格分隔" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">希望加入的部门:</label>
+                            <div class="col-sm-2">
+                                <select class="form-control" id="apartment_input" name="apartment" required>
+                                    <option>组织部</option>
+                                    <option>秘书部</option>
+                                    <option>宣传部</option>
+                                    <option>人力资源部</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-1 control-label">服从分配:</label>
+                            <div class="col-sm-1">
+                                <input type="radio" value="0" name="agree_to_allocation" checked>是
+                                <input type="radio" value="1" name="agree_to_allocation">否
+                            </div>
+                            <label class="col-sm-1 control-label">技术倾向:</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="tech_input" name="tech" placeholder="多个请用空格分隔" required>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">对俱乐部的期待:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" rows="5" id="await_input" name="await" required></textarea>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">大学的计划:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" rows="5" id="plan_input" name="plan" required></textarea>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">自我评价:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" rows="5" id="assess_input" name="assess" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="button-area" align="center">
+                        <input type="reset" class="btn btn-danger" id="clear-btn" value="清空">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" class="btn btn-success" id="submit-btn" value="提交">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+
+    </div>
+
+{% endblock %}

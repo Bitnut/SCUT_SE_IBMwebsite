@@ -1,0 +1,430 @@
+{% extends 'base.html' %}
+
+{% block title_text %}关于我们{% endblock %}
+
+{% block stylesheet %}/static/about.css{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="alert alert-info" role="alert">
+                    <h2>俱乐部性质</h2>
+                    <p>
+                        &nbsp; &nbsp;&nbsp; &nbsp;华南理工大学软件学院 IBM 俱乐部是由华南理工大学软件学院、
+                        华南理工大学主机教育创新中心发起，由对IBM公司的技术和运营感兴趣的华南理工大学软件学院学
+                        生筹建的<i>非盈利性的技术性学生社团</i>。
+                        <br />&nbsp; &nbsp;&nbsp; &nbsp;软件学院 IBM 俱乐部是一个以服务全体华工软件学子为目的、独立运作的学生组织。
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-success" role="alert">
+                    <h2>俱乐部宗旨</h2>
+                    <p>
+                        &nbsp; &nbsp;&nbsp; &nbsp;为所有加入到软件学院 IBM 俱乐部会员搭建一个最优质良好的交流平台和创造一个最积极上进的活动空间，
+                        一方面通过提供接触IBM最新研究成果和优秀企业文化的机会，
+                        使会员能够了解IBM的技术和运营，
+                        普及和加强信息技术教育，
+                        促进各学科间的交流和融合，
+                        另一方面通过学生的积极参与，
+                        激发会员的创造力和活动组织能力！
+                        <br />&nbsp; &nbsp;&nbsp; &nbsp;使会员不仅在专业技术上，
+                        在创新意识上，而且在组织、领导、策划和沟通能力上都能够有质的飞跃，
+                        <br />&nbsp; &nbsp;&nbsp; &nbsp;最终通过全体会员的努力，
+                        将俱乐部建设为华南理工大学技术研究性团体，
+                        华南理工大学素质教育及综合性人才培养基地，
+                        最终成为培养工程师、科学家和企业家的摇篮。
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-12">
+                <h1>俱乐部介绍</h1>
+                <div class="well">
+                    <h2>俱乐部组织架构</h2>
+                    <br/>
+                    <img src="/static/images/zuzhijiegou.png" width="100%" height="100%">
+                    <P>注:俱乐部成员具有双重身份,一方面需要参与到俱乐部的日常运营中来,另一方面可以选择自己喜欢的项目组进行技术活动</P>
+
+                    <h1>指导老师队伍</h1>
+                    <br/>
+                    <h1><span class="label label-info">专职师资</span></h1>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;俱乐部师资参加了IBM主机一系列的师资培训，获得IBM主机技术认证证书，有能力开设从
+                        主机操作系统与应用开发、主机大型数据库DB2管理和开发、中间件CICS开发，到银行金融业务系统应用与开发等一系列主机
+                        应用类课程。具有主机项目开发和维护经验，能根据用户需求从事主机人才培养以及应用系统设计、开发和维护工作。
+                    </h4>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_wangzhenyu.jpg" >
+                                    <div class="caption">
+                                        <p>IBM主机教育中心主任<br />
+                                        现软件学院院长<br />王振宇老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_huangzhiwei.jpg">
+                                    <div class="caption">
+                                        <p>黄志炜  老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_tangfeng.jpg">
+                                    <div class="caption">
+                                        <p>汤  峰  老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_xuke.jpg" >
+                                    <div class="caption">
+                                        <p>许  可   老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_wangguohua.png" width="100%" height="100%">
+                                    <div class="caption">
+                                        <p>王国华  老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/teacher_zhuzhifeng.jpg">
+                                    <div class="caption">
+                                        <p>朱志峰  老师</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <h1><span class="label label-info">IBM资深专家以及一线工程师</span></h1>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                中心定期邀请IBM公司及其合作伙伴的主机技术专家、国内外大学和科研机构的资深专家来校授课或开设技术讲座与研讨会。<br/><br/><br/>
+                                黄小平 先生<br/><br/><br/>
+                                中国农业银行上海市分行信息科技部高级工程师，IBM主机大学合作项目特聘专家，从事大型机管理及科研工作逾三十年，有诸多应用贡献和科技成果。<br/><br/><br/>
+                            </h4>
+                        </div>
+                        <div class="media-right">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/Mr.huangxiaoping.png" width="200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/Dr.GeneFuh.png" width="300">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <div class="media-body">
+                               <h4 class="media-heading">
+                                &nbsp; &nbsp;&nbsp; &nbsp;图为2010年9月，邀请IBM中国开发中心信息管理首席技术官傅毓勤（Gene Fuh）博士开展了一次IBM主机技术讲座--- “Excel at the Enterprise Computing”，
+                                为在座师生带来主机DB2数据库方向的理念和技术。
+                               </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <h1><span class="label label-info">学生项目</span></h1>
+                    <br/>
+                    <h2>IBM课程证书</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;修满主机专业方向所有学分课程的学生，IBM公司将颁发Professional Certification证书；修完部分课程学分的学生，IBM公司将颁发Specialist Certification证书。
+                    </h4>
+                    <br/>
+                    <h2>国内竞赛</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;为了激励师生热情、增进交流和比较、营造良好竞争氛围、奖励优秀人员和检验合作项目在培养人才上的实际效果，IBM公司每年面向合作高校举办一些校园竞赛。我校师生积极参与到IBM的各项竞赛中，至今共取得全国主机技术应用大赛一等奖二次，二等奖六次，三等奖八次。
+                    </h4>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/price1.jpg" >
+                                    <div class="caption">
+                                        <p>2008 IBM全国主机应用大赛颁奖礼</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/price2.jpg">
+                                    <div class="caption">
+                                        <p>2004 IBM Linux大赛颁奖典礼</p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/static/images/price3.jpg">
+                                    <div class="caption">
+                                        <p>2017 IBM 黑客马拉松全国校园大赛颁奖典礼</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>校园讲座</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;作为学科建设和师资培训的重要补充，IBM公司将尽可能地安排专家、学者及企业在校园里进行讲座和演讲。主要开展包括“IBM大型主机技术全国应用大赛发布和启动仪式”、“ DB2应用”、 “CATCH  M”、“IBM大型主机技术全国应用大赛发布和启动仪式”等讲座活动。
+                    </h4>
+                    <br/>
+                    <h2>实习机会</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;IBM充分利用IBM中国研究中心、IBM中国研究开发中心和IBM全球服务部创新解决方案开发基地的资源，向合作伙伴高校的学生提供了实习场地和实习项目。2007年上半年，IBM向我校学生提供了四次实习机会。
+                    </h4>
+                    <br/>
+                    <h2>校企合作</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;计划面向企业，按需培养，与企业开展合作，实现人才定制培养。目前已与深圳四方精创、易斯达有限公司、汇丰银行软件开发中心签订了合作协议，建立起实训基地，推荐具有主机技术的学生到公司参与实习；此外，每年推荐主机课程中的优秀学员参加IBM公司和汇丰银行的暑期实习生计划。
+                    </h4>
+                    <br/>
+                    <h2>招聘和推荐就业</h2>
+                    <br/>
+                    <h4>
+                        &nbsp; &nbsp;&nbsp; &nbsp;IBM 公司将积极推荐获得主机教育Professional Certification的优秀学生到IBM相关部门和子公司，以及IBM的合作伙伴和相关客户。
+                    </h4>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h1><span class="label label-info">主机教育中心</span></h1>
+                    <h2>中心环境</h2>
+                    <br/>
+                    <h4>&nbsp; &nbsp;&nbsp; &nbsp;俱乐部依托于 IBM 主机系统教育中心（广州）拥有IBM新型的64位Z系列大型机一台、IBM P520小型机一台、50多台IBM PC机、近400m2的培训环境，大型机设置了z/OS V1.5、z/OS V1.8
+                        以及Linux for zSeries操作系统，并装配有DB2,IMS,Websphere,CICS等应用软件，中心配备相应的外围设备作为控制台，并设有专门的开发与培训机房，适合进行高标准，
+                        大数据量，稳定性和安全性要求高的主机系统项目开发。精密空调和UPS供电系统等辅助设备使得本中心也适宜于生产环境下主机产品的运行。
+                    </h4>
+                    <br/>
+                    <h2>大型主机</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            组成部件<br/>
+                            主机（型号2097-E26）<br/>
+                            磁盘柜DS8300<br/>
+                        </li>
+                        <li class="list-group-item">
+                            主机系统<br/>
+                            型号：    2097-E26<br/>
+                            处理器：  11颗<br/>
+                            处理速度：约7800-8000MIPS<br/>
+                            内存：    64GB<br/>
+                            目前逻辑分区：5个<br/>
+                        </li>
+                        <li class="list-group-item">
+                            存储系统<br/>
+                            型号：   DS8300 磁盘阵列<br/>
+                            容量：    8TB</li>
+                        <li class="list-group-item">
+                            主机特点：RAS高可靠性、高可用性、高服务性<br/>
+                        </li>
+                    </ul>
+                    <div class="media">
+                        <div class="media-body">
+                             <ul class="list-group">
+                                 <li class="list-group-item">
+                                     组成部件
+                                 </li>
+                                 <li class="list-group-item">
+                                     主机（型号2064）
+                                 </li>
+                                 <li class="list-group-item">
+                                     磁盘柜ESS（型号2105）
+                                 </li>
+                                 <li class="list-group-item">
+                                     磁带机（型号3590）
+                                 </li>
+                                 <li class="list-group-item">
+                                     通讯控制器（型号2074）
+                                 </li>
+                             </ul>
+                        </div>
+                        <div class="media-right">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/mf1.jpg" width="200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                             <ul class="list-group">
+                                 <li class="list-group-item">
+                                     主机系统
+                                 </li>
+                                 <li class="list-group-item">
+                                     型号：    2064-2C2
+                                 </li>
+                                 <li class="list-group-item">
+                                     处理器：  64位2个处理器 (可扩充至20个处理器)
+                                 </li>
+                                 <li class="list-group-item">
+                                     处理速度：600MIPS
+                                 </li>
+                                 <li class="list-group-item">
+                                     内存：    16GB
+                                 </li>
+                                 <li class="list-group-item">
+                                     目前逻辑分区：4个，最多可达15个
+                                 </li><li class="list-group-item">
+                                     I/O吞吐能力：最低每秒24GB
+                                 </li>
+                             </ul>
+                        </div>
+                        <div class="media-right">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/mf2.jpg" width="200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                             <ul class="list-group">
+                                 <li class="list-group-item">
+                                     存储系统
+                                 </li>
+                                 <li class="list-group-item">
+                                     型号：    Shark 磁盘阵列
+                                 </li>
+                                 <li class="list-group-item">
+                                     容量：    873.6GB （可扩充至11.2TB）
+                                 </li>
+                             </ul>
+                            <ul class="list-group">
+                                 <li class="list-group-item">
+                                     I/O通道
+                                 </li>
+                                 <li class="list-group-item">
+                                     最多256个ESCON通道，或者160个ESCON通道
+                                 </li>
+                                 <li class="list-group-item">
+                                     ＋96个FICON
+                                 </li>
+                                 <li class="list-group-item">
+                                     目前2路OSA通道
+                                 </li>
+                                 <li class="list-group-item">
+                                     令牌环、FDDI、以太网、ATM
+                                 </li>
+                             </ul>
+                        </div>
+                        <div class="media-right">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/mf3.jpg" width="200">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="list-group">
+                                <li class="list-group-item">
+                                    <h4 class="list-group-item-heading ">
+                                    主机特点：
+                                    </h4>
+                                    <p class="list-group-item-text">RAS高可靠性、高可用性、高服务性 </p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        操作系统：
+                                    </h4>
+                                    <p class="list-group-item-text">z/OS  V1R5、V1R8、 LINUX</p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        系统软件：
+                                    </h4>
+                                    <p class="list-group-item-text">DB2 V7、IMS 、Websphare 5.0、CICS TS 2.3等</p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        支持语言：
+                                    </h4>
+                                    <p class="list-group-item-text">JCL、C、COBOL、JAVA、FORTRAN、PL/I、汇编等</p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        应用特征：
+                                    </h4>
+                                    <p class="list-group-item-text">高性能科学计算、数据分析、联机事务处理、图形处理等</p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        适用范围：
+                                    </h4>
+                                    <p class="list-group-item-text">具有大量数据处理要求，对系统稳定性，安全性要求较高的各种商业应用系统开发和运行。</p><br/>
+                                    <h4 class="list-group-item-heading">
+                                        大型机配套设备：系统控制台和普通控制台
+                                    </h4>
+                                    <p class="list-group-item-text">
+                                        PC型号：IBM M52E 8380D38 <br/>
+                                        硬件配置：P4 3.0/945GZ/512MB/80GB /DVD/无软驱/DOS 特配机型，15寸液晶 <br/>
+                                        正版微软OEM版 XP P彩色<br/>
+                                    </p>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="media-right">
+                            <a href="#">
+                                <img class="media-object" src="/static/images/ac1.jpg" width="200">
+                            </a>
+                            <a href="#">
+                                <img class="media-object" src="/static/images/ups.jpg" width="200">
+                            </a>
+                        </div>
+                    </div>
+                    <h1><span class="label label-info">科研与交流</span></h1>
+                    <ul>
+                        <h3><li>公共计算平台</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;计划综合华南理工大学各学院服务器和IBM主机资源，组成公共计算平台，为华南理工大学各学院、研究所以及面向社会提供跨平台计算服务。
+                        </h4>
+                        <h3><li>主机SOA技术研究</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;研究将传统主机业务封装成通用服务，在主机应用系统中采用SOA技术，实现传统业务与现有业务的有效整合。
+                        </h4>
+                        <h3><li>主机安全研究</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;研究主机操作系统及银行交易系统漏洞，尝试攻击，并提出相应防范措施。
+                        </h4>
+                        <h3><li>主机通信研究</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;研究主机TCP/IP和VTAM通讯机制，尝试优化/简化主机TCP/IP配置等。
+                        </h4>
+                        <h3><li>金融应用研究</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;探索主机技术高等教育与行业应用的结合，研究为国内外金融机构培养主机技术人才以及在主机金融应用领域的科研、测试等的产学研合作。目前已与华南理工大学金融中心开展合作。
+                        </h4>
+                        <h3><li>行业应用</li></h3>
+                        <h4>
+                            &nbsp; &nbsp;&nbsp; &nbsp;挖掘主机在金融、保险、政府、公共事业领域的应用，寻找合作伙伴，开展多方位合作。
+                        </h4>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                    <address>
+                        <strong>中国  广州  华南理工大学软件学院 IBM 主机创新俱乐部 </strong><br/><br/>
+                        地址：广州市大学城华南理工大学图书馆七楼<br/><br/>
+                        <abbr title="Phone">P:</abbr> 电话/传真：020－39380332 <br/><br/>
+                        邮编：510006<br/>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+h1,h3,p,a,button {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.onepage{
+    height: 750px;
+}
+
+.onepage-bg{
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+
+#onepagebg{
+    background-image: url("images/bg6.jpg");
+    /*background-image: url("images/bg2.jpg");*/
+}
+
+.starter{
+    padding: 40px 15px;
+    text-align: center;
+    margin-top: 175px;
+}
+
+.starter h1{
+    font-size: 60px;
+    /*color: #FFFFCC;*/
+    color: #FFCC33;
+    letter-spacing: 10px;
+}
+
+.starter p{
+    color: #ffffff;
+}
