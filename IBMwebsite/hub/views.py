@@ -41,7 +41,8 @@ def code(request):
     project = Project.objects.get(project_name=p_name,lead_user=p_owner)
     #project = Project.objects.get(project_id=res)
     request.session['now_project_id'] = project.project_id
-    request.session['now_project_name'] = project.project_name
+    request.session['now_project_id'] = project.project_id
+    request.session['now_project_description'] = project.description
     request.session['now_project_owner'] = project.lead_user.user_name
     request.session['now_project_repo_path'] = codehub_path + project.lead_user.user_name + '/'+project.project_name+'/'
 
@@ -265,7 +266,6 @@ def project_create(request):
         description = request.POST.get('description')
         dir_name = codehub_path+request.session['user_name']+'/'+project_name
         repo_path = request.session['user_name']+'/'+project_name+'/'
-        description = '暂时固定'
         try:
             tem = models.Project.objects.create(project_name = project_name,description =description,repo_path = repo_path,lead_user = get_object_or_404(User, pk=request.session['user_name']))
         except:

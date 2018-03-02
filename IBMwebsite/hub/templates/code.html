@@ -27,7 +27,7 @@
 
 	<br>
   <p style="font-family:arial;color:black;font-size:20px;"> <a href="{% url 'hub:profile' %}">{{request.session.now_project_owner}}</a> / <a href="{% url 'hub:code' %}">{{request.session.now_project_name}}</a></p>
-<hr>项目描述
+<hr>{{request.session.now_project_description}}
   </div>
   <div class="panel-body">
     <ul class="nav nav-tabs">
