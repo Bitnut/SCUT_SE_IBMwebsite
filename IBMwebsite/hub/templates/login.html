@@ -45,14 +45,14 @@
 	<style>
              #msg{
                 height: 2rem;
-   		text-align: center;
-   		position: fixed;
-    		top: 5%;
-    		margin-top: -1rem;
-    		line-height: 2rem;
-    		width: 100%;
+				text-align: center;
+				position: fixed;
+				top: 5%;
+				margin-top: -1rem;
+				line-height: 2rem;
+				width: 100%;
     		}
-		#msg span{
+			#msg span{
     			color: #ffffff;
     			background-color: #00aa00;
     			height: 2rem;
@@ -60,47 +60,7 @@
     			padding: 0 10rem;
     			border-radius: 5px;
 			}
-        </style>
-        <script type="text/javascript">
-        function clearmsg(){
-    		var t = setTimeout(function(){
-        	$("#msg").remove();
-    		},2000)
-		};
-
-	function alertNo()
-	{
-		//document.write('1111111')
-	    var h = "不存在"
-	    //document.write('333333')
-	    $("body").append("<div id='msg'><span>"+h+"</span></div>");
-	{#     $("body").append("<div class=\"alert alert-warning\">"+h+"</div>");#}
-	{#    $("body").append("<div class="alert alert-warning">h</div>");#}
-	    clearmsg();
-//document.write('22222222')
-	{#   alert(h)#}
-	}
-	function disp_alert(h)
-	{
-		//alert("密码或用户名错误")
-		//alertNo()
-		//document.write('4444444')
-		//var c = "不存在"
-	    $("body").append("<div id='msg'><span>"+h+"</span></div>");
-		
-	    //$("body").append("<div id='msg'><span>"+h+"</span></div>");
-	    
-	{#    $("body").append("<div class="alert alert-warning">h</div>");#}
-	
-	    clearmsg();
-
-
-	{#   alert(h)#}
-
-	}
-	 
-	</script>
-
+    </style>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -165,22 +125,11 @@
 	<script src="/static/loginRegister/js/jquery.placeholder.min.js"></script>
 	<!-- Waypoints -->
 	<script src="/static/loginRegister/js/jquery.waypoints.min.js"></script>
-	<!-- Main JS -->
+    <!-- Main JS -->
 	<script src="/static/loginRegister/js/main.js"></script>
-
-	
-	<script>
-                var List = {{ List|safe }}
-                //alert(List)
-                    if(List == "密码或用户名错误") {
-		    	        //alertNo()
-                        disp_alert(List)
-                        //alert('sdfsd')
-                        //document.write('sdfdsgreger')
-                    }
-    </script>
-
-
+    <!-- Wrong Message notice-->
+    <script>var List = {{ List|safe }};</script>
+    <script type="text/javascript" src="/static/hubFile/errorDisplay.js"></script>
 	</body>
 </html>
 

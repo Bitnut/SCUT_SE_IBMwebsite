@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 # Create your models here.
 class User(models.Model):
 	"""docstring for User"""
-	user_name = models.CharField(primary_key=True,max_length=30,unique=True)
+	user_name = models.CharField(primary_key=True,max_length=30)
 	email = models.CharField(max_length=100)
 	password = models.CharField(max_length=30)
 	def __str__(self):
@@ -22,11 +22,11 @@ class  Project(models.Model):
 	# def __init__(self, arg):
 	# 	super( Project, self).__init__()
 	# 	self.arg = arg
-	project_id = models.AutoField(primary_key=True,unique=True)
+	project_id = models.AutoField(primary_key=True)
 	project_name = models.CharField(max_length=100,unique=True)
 	repo_path = models.CharField(max_length=100)
 	description = models.CharField(max_length=200)
-	lead_user = models.OneToOneField(User)
+	lead_user = models.ForeignKey(User)
 	def __str__(self):
 		return self.project_name
 

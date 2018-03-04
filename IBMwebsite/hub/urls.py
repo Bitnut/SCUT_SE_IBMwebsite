@@ -4,7 +4,7 @@ from . import views
 app_name = 'hub'
 urlpatterns = [
     url(r'^index', views.index, name='index'),
-    url(r'^mainPage', views.mainPage),
+    url(r'^mainPage/$', views.mainPage, name='mainPage'),
     url(r'^login', views.login, name='login'),
     url(r'^register', views.register, name='register'),
     url(r'^profile', views.profile,name='profile'),
@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^delMem', views.delMem, name='delMem'),
     url(r'^settings', views.settings,name='settings'),
     url(r'^delProject', views.delProject, name='delProject'),
-    url(r'^user_record', views.user_record),
-    url(r'^projectCatalog', views.profile),
+    url(r'^user_record', views.user_record, name='user_record'),
+    url(r'^projectCatalog', views.profile, name='projectCatalog'),
     # url(r'^create_new_branch', views.create_branch, name='newbranch'),
     # url(r'^delete', views.delete_branch, name='deletebranch'),
     # url(r'^merge', views.merge_branch, name='mergebranch'),

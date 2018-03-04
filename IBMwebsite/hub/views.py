@@ -245,7 +245,7 @@ def process_LoginOrRegister(request):
         if len(ff)!=0:user_object = ff[0]
         if len(ff)==0 or user_object.password!= password:
             print ("wrong password")
-            list = ["密码或用户名错误"]
+            list = ["密码或用户名错误!"]
             return render(request,'login.html',{'List':json.dumps(list)})
 
     request.session['user_email'] = user_object.email
@@ -274,7 +274,6 @@ def project_create(request):
         GitFileController.mygit.create_working_dir(dir_name, request.session['user_name'],request.session['user_email'])
         models.project_user.objects.create(project_id = tem.project_id,user_name = get_object_or_404(User, pk=request.session['user_name']))
         request.session['now_project_owner'],request.session['now_project_name'] = request.session['user_name'],project_name
-        
         msg = '创建了项目 '+project_name
         user_commit.record(request.session['user_name'], msg)
         return HttpResponseRedirect(reverse('hub:code'))

@@ -42,31 +42,25 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script type="text/javascript">
-		function clearmsg(){
-    		var t = setTimeout(function(){
-        	$("#msg").remove();
-    		},2000)
-		};
-		function alertNo()
-		{
-			var h = "不存在"
-			$("body").append("<div id='msg'><span>"+h+"</span></div>");
-		{#     $("body").append("<div class=\"alert alert-warning\">"+h+"</div>");#}
-		{#    $("body").append("<div class="alert alert-warning">h</div>");#}
-			clearmsg();
-		{#   alert(h)#}
+	<style>
+		 #msg{
+			height: 2rem;
+			text-align: center;
+			position: fixed;
+			top: 5%;
+			margin-top: -1rem;
+			line-height: 3rem;
+			width: 100%;
 		}
-		function disp_alert(h)
-		{
-			$("body").append("<div id='msg'><span>"+h+"</span></div>");
-		{#    $("body").append("<div class="alert alert-warning">h</div>");#}
-
-			clearmsg();
-		{#   alert(h)#}
-
+		#msg span{
+			color: #ffffff;
+			background-color: #00aa00;
+			height: 2rem;
+			display: inline-block;
+			padding: 0 10rem;
+			border-radius: 5px;
 		}
-	</script>
+    </style>
 	</head>
 	<body class="style-2">
 
@@ -137,16 +131,9 @@
 	<script src="/static/loginRegister/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="/static/loginRegister/js/main.js"></script>
-	<script>
-        var List = {{ List|safe }}
-                //alert(List)
-                    if(List == "您使用了与别人相同的用户名！") {
-		    	        //alertNo()
-                        disp_alert(List)
-                        //alert('sdfsd')
-                        //document.write('sdfdsgreger')
-                    }
-	</script>
+	<!-- Wrong Message notice-->
+	<script>var List = {{ List|safe }};</script>
+    <script type="text/javascript" src="/static/hubFile/errorDisplay.js"></script>
 	</body>
 </html>
 
