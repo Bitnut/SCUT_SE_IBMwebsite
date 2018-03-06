@@ -1,0 +1,4 @@
+pygit2==0.26.0
+Django==1.11
+
+部署命令：gunicorn -c ./gunicorn_config.py --bind unix:/home/pinchao/IBM/ibmwebsite.socket IBM_CLUB_WEBSITE_31.wsgi:application --limit-request-line 4096:

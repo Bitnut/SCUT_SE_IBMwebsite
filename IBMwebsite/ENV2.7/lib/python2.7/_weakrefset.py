@@ -1,5 +1,0 @@
-XSym
-0033
-99a7c3e40105ceea7d8c57627dbfd7cb
-/usr/lib/python2.7/_weakrefset.py
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
